@@ -7,6 +7,15 @@ $data = [
 'email'  => $submission->params['email'],
 'name_parent'  => $submission->params['name_parent'],
 'vorname_parent'  => $submission->params['vorname_parent'],
+$data = [
+'name_kind' => $submission->params['name_kind'],
+'vorname_kind'  => $submission->params['vorname_kind'],
+'address'  => $submission->params['address'],
+'location'  => $submission->params['location'],
+'notes'  => $submission->params['notes'],
+'email'  => $submission->params['email'],
+'name_parent'  => $submission->params['name_parent'],
+'vorname_parent'  => $submission->params['vorname_parent'],
 'mobilephone'  => $submission->params['mobilephone'],
 'wish_course'  => $submission->params['wish_course'],
 'foto_permission'  => $submission->params['foto_permission'],
@@ -25,6 +34,7 @@ $data = [
 $url = 'https://ferienpass-server.herokuapp.com/newOrder';
 
 $jsondata = json_encode($data);
+
 
 $response = JHttpFactory::getHttp()->post($url, $jsondata);
 

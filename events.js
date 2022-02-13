@@ -180,7 +180,9 @@ function createRouter(db) {
 
     router.post('/newOrder', (req, res) => {
 
+
         let name_kind = req.body.name_kind;
+        console.log(name_kind)
         let vorname_kind = req.body.vorname_kind;
         let address = req.body.address;
         let location = req.body.location;
@@ -236,9 +238,6 @@ function createRouter(db) {
             kurs10 = wish_course[9];
         })
 */
-
-
-
 
 
         db.query(
