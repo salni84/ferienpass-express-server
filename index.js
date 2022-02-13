@@ -27,10 +27,3 @@ const port = process.env.PORT || 8080;
         console.log(`Express server listening on port ${port}`)
     });
 
-const req = https.request(options, callback)
-
-req.on('error', (e) => {
-    console.error(e);
-});
-
-req.end();
