@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080;
             user: 'hlpsic6ztca4dwle',
             password: 'mumpz8h8959hjbd6',
             database: 'k6nhcsbl684kdmq6',
-            port: process.env.PORT,
+            port: 8080,
             insecureAuth: true
         });
 
