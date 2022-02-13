@@ -12,8 +12,10 @@ function createRouter(db) {
     });
 
 
-    router.get('/usermanagement', (req, res) => {
-        if (req.body === 'fpb7402') {
+    router.post('/usermanagement', (req, res) => {
+        const password = req.body.password;
+        console.log(req.body)
+        if (password === 'fpb7402') {
             res.status(200)
         } else {
             res.status(400)
