@@ -6,9 +6,12 @@ const connection = require("mysql");
 function createRouter(db) {
     const router = express.Router();
     const app = express();
-    app.use(bodyParser.urlencoded({extended: false}));
-    app.use(bodyParser.json());
+    const bodyParser = require("body-parser")
     app.use(express.json());
+    app.use(bodyParser.urlencoded({
+        extended:true
+    }));
+    app.use(express.urlencoded({ extended: true }));
     app.use(function (req, res) {
         res.end(JSON.stringify(req.body, null, 2))
     });
@@ -178,6 +181,7 @@ function createRouter(db) {
     router.post('/newOrder', (req, res) => {
 
         let name_kind = req.body.name_kind;
+        console.log(name_kind)
         let vorname_kind = req.body.vorname_kind;
         let address = req.body.address;
         let location = req.body.location;
@@ -188,6 +192,7 @@ function createRouter(db) {
         let vorname_parent = req.body.vorname_parent;
         let mobilephone = req.body.mobilephone;
         let wish_course = req.body.wish_course;
+        console.log(wish_course)
         let foto_permission = req.body.foto_permission;
         let car = req.body.car;
         let begleitkurs = req.body.begleitkurs;
@@ -202,8 +207,6 @@ function createRouter(db) {
         let course_prio3_sany = course_prio3;
         let course_prio4_sany = course_prio4;
         let course_prio5_sany = course_prio5;
-
-
 
         let verguenstigungen_oev = req.body.verguenstigungen_oev;
         let anmeldedatum = req.body.anmeldedatum;
@@ -234,29 +237,6 @@ function createRouter(db) {
             });
     });
 
-
-
-
-
-
-    router.put('/basic', (req, res) => {
-
-        for (let x = 0; x < req.body.length; x++) {
-            let id = req.body[x].id;
-            let position = req.body[x].position;
-            let visibleName = req.body[x].visibleName;
-            let color = req.body[x].color;
-            let form = req.body[x].form;
-
-
-            db.query(
-                "UPDATE basicprocess SET position = ?, visibleName = ?, form = ?, color = ? WHERE id = ?", [position, visibleName, form, color, id],
-                () => {
-                })
-        }
-
-        res.status(200).json()
-    });
 
 
 
