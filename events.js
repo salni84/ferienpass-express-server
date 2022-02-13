@@ -191,11 +191,20 @@ function createRouter(db) {
         let foto_permission = req.body.foto_permission;
         let car = req.body.car;
         let begleitkurs = req.body.begleitkurs;
-        let course_prio1 = req.body.course_prio1.replace('/[^A-Za-z0-9()äÄüÜöÖß -]/', '');
-        let course_prio2 = req.body.course_prio2.replace('/[^A-Za-z0-9()äÄüÜöÖß -]/', '');
-        let course_prio3 = req.body.course_prio3.replace('/[^A-Za-z0-9()äÄüÜöÖß -]/', '');
-        let course_prio4 = req.body.course_prio4.replace('/[^A-Za-z0-9()äÄüÜöÖß -]/', '');
-        let course_prio5 = req.body.course_prio5.replace('/[^A-Za-z0-9()äÄüÜöÖß -]/', '');
+        let course_prio1 = req.body.course_prio1;
+        let course_prio2 = req.body.course_prio2;
+        let course_prio3 = req.body.course_prio3;
+        let course_prio4 = req.body.course_prio4;
+        let course_prio5 = req.body.course_prio5;
+
+        let course_prio1_sany = course_prio1;
+        let course_prio2_sany = course_prio2;
+        let course_prio3_sany = course_prio3;
+        let course_prio4_sany = course_prio4;
+        let course_prio5_sany = course_prio5;
+
+
+
         let verguenstigungen_oev = req.body.verguenstigungen_oev;
         let anmeldedatum = req.body.anmeldedatum;
         let kurs1 = wish_course[0];
