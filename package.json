@@ -4,8 +4,7 @@
   "description": "process-server",
   "main": "index.js",
   "scripts": {
-    "start:prod": "NODE_ENV=prod node index.js",
-    "start:dev": "NODE_ENV=dev node index.js",
+    "start:prod": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Roberto Salerno",
