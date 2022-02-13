@@ -192,7 +192,6 @@ function createRouter(db) {
         let vorname_parent = req.body.vorname_parent;
         let mobilephone = req.body.mobilephone;
         let wish_course = req.body.wish_course;
-        console.log(wish_course)
         let foto_permission = req.body.foto_permission;
         let car = req.body.car;
         let begleitkurs = req.body.begleitkurs;
@@ -210,19 +209,40 @@ function createRouter(db) {
 
         let verguenstigungen_oev = req.body.verguenstigungen_oev;
         let anmeldedatum = req.body.anmeldedatum;
-        let kurs1 = wish_course[0];
-        let kurs2 = wish_course[1];
-        let kurs3 = wish_course[2];
-        let kurs4 = wish_course[3];
-        let kurs5 = wish_course[4];
-        let kurs6 = wish_course[5];
-        let kurs7 = wish_course[6];
-        let kurs8 = wish_course[7];
-        let kurs9 = wish_course[8];
-        let kurs10 = wish_course[9];
+
+
+        let kurs1;
+        let kurs2;
+        let kurs3;
+        let kurs4;
+        let kurs5;
+        let kurs6;
+        let kurs7;
+        let kurs8;
+        let kurs9;
+        let kurs10;
+
+
+        wish_course.forEach(() => {
+            kurs1 = wish_course[0];
+            kurs2 = wish_course[1];
+            kurs3 = wish_course[2];
+            kurs4 = wish_course[3];
+            kurs5 = wish_course[4];
+            kurs6 = wish_course[5];
+            kurs7 = wish_course[6];
+            kurs8 = wish_course[7];
+            kurs9 = wish_course[8];
+            kurs10 = wish_course[9];
+        })
+
+
+
+
+
 
         db.query(
-            'INSERT INTO anmeldungen VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
+            'INSERT INTO anmeldungen VALUES (null, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
                 null, name_kind, vorname_kind, address, location, email, birthdate, notes, name_parent, vorname_parent, mobilephone, foto_permission,
                 verguenstigungen_oev, course_prio1, course_prio2, course_prio3, course_prio4, course_prio5, car, begleitkurs, kurs1, kurs2,
                 kurs3, kurs4, kurs5, kurs6, kurs7, kurs8, kurs9, kurs10],
