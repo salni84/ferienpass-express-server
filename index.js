@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const events = require('./events');
-const https = require("express");
 const port = process.env.PORT || 8080;
 
     const connection = mysql.createConnection(
@@ -12,7 +11,7 @@ const port = process.env.PORT || 8080;
             user: 'hlpsic6ztca4dwle',
             password: 'mumpz8h8959hjbd6',
             database: 'k6nhcsbl684kdmq6',
-            port: port,
+            port: 3306,
             insecureAuth: true
         });
 
