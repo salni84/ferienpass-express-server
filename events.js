@@ -242,7 +242,7 @@ function createRouter(db) {
 
 
         db.query(
-            'INSERT INTO anmeldungen VALUES (null, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
+            'INSERT INTO anmeldungen VALUES (null, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
                 null, name_kind, vorname_kind, address, location, email, birthdate, notes, name_parent, vorname_parent, mobilephone, foto_permission,
                 verguenstigungen_oev, course_prio1, course_prio2, course_prio3, course_prio4, course_prio5, car, begleitkurs],
             (error, results) => {
