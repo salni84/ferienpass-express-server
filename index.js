@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const events = require('./events');
+const https = require("express");
 const port = process.env.PORT || 8080;
 
     const connection = mysql.createConnection(
@@ -25,3 +26,11 @@ const port = process.env.PORT || 8080;
     app.listen(port, () => {
         console.log(`Express server listening on port ${port}`)
     });
+
+const req = https.request(options, callback)
+
+req.on('error', (e) => {
+    console.error(e);
+});
+
+req.end();
