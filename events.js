@@ -181,7 +181,6 @@ function createRouter(db) {
     router.post('/newOrder', (req, res) => {
 
         let name_kind = req.body.name_kind;
-        console.log(name_kind)
         let vorname_kind = req.body.vorname_kind;
         let address = req.body.address;
         let location = req.body.location;
@@ -192,6 +191,7 @@ function createRouter(db) {
         let vorname_parent = req.body.vorname_parent;
         let mobilephone = req.body.mobilephone;
         let wish_course = req.body.wish_course;
+        console.log(wish_course)
         let foto_permission = req.body.foto_permission;
         let car = req.body.car;
         let begleitkurs = req.body.begleitkurs;
@@ -211,7 +211,7 @@ function createRouter(db) {
         let anmeldedatum = req.body.anmeldedatum;
 
 
-        let kurs1;
+       /* let kurs1;
         let kurs2;
         let kurs3;
         let kurs4;
@@ -235,7 +235,7 @@ function createRouter(db) {
             kurs9 = wish_course[8];
             kurs10 = wish_course[9];
         })
-
+*/
 
 
 
@@ -244,8 +244,7 @@ function createRouter(db) {
         db.query(
             'INSERT INTO anmeldungen VALUES (null, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [
                 null, name_kind, vorname_kind, address, location, email, birthdate, notes, name_parent, vorname_parent, mobilephone, foto_permission,
-                verguenstigungen_oev, course_prio1, course_prio2, course_prio3, course_prio4, course_prio5, car, begleitkurs, kurs1, kurs2,
-                kurs3, kurs4, kurs5, kurs6, kurs7, kurs8, kurs9, kurs10],
+                verguenstigungen_oev, course_prio1, course_prio2, course_prio3, course_prio4, course_prio5, car, begleitkurs],
             (error, results) => {
                 console.log(error)
                 if (error) {
