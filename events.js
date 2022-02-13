@@ -12,6 +12,15 @@ function createRouter(db) {
     });
 
 
+    router.get('/usermanagement', (req, res) => {
+        if (req.body === 'fpb7402') {
+            res.status(200)
+        } else {
+            res.status(400)
+        }
+    })
+
+
     router.get('/getAllOrders', (req, res) => {
         db.query(
             'SELECT * FROM anmeldungen ORDER BY name_kind',
